@@ -1,0 +1,835 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Arvind Yadav — Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+  --bg: #020617;;
+  --panel: #0f1115;
+  --accent: #00c0d6;
+  --muted: #9aa2a6;
+  --glass: rgba(255,255,255,0.03);
+  --text: #e7eef0;
+  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+body {
+  background: radial-gradient(1200px 400px at 50% 20%, rgba(0,192,214,0.06), transparent), var(--bg);
+  color: var(--text);
+  transition: background  0.3s, color 0.3s;
+}
+
+body.light {
+  --bg: #f0e9e9;
+  --panel: #ffffff;
+  --accent: #00c0d6;
+  --muted: #504a4a;
+  --glass: rgba(0,0,0,0.05);
+  --text: #111;
+    }
+    a{color:var(--accent);text-decoration:none} 
+
+    .container{max-width:var(--max-w);margin:0 auto;padding:28px}
+
+    /* NAV */
+  header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+}
+  .logo img {
+  height: 60px;  /* PNG/SVG size */
+  width: 70%;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  border-radius: 50%;
+}
+
+.logo img:hover {
+  transform: scale(1.1);
+}
+
+.wave {
+  display: inline-block;
+  animation: wave 2s infinite;
+  transform-origin: 70% 70%;
+}
+@keyframes wave {
+  0%, 60%, 100% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(15deg);
+  }
+  40% {
+    transform: rotate(-15deg);
+  }
+}
+
+    nav{display:flex;gap:18px;align-items:center}
+    nav a{color:#808686;font-size:17px;padding:8px 10px;border-radius:8px}
+    nav a.active{color:var(--accent)}
+    .btn-cta{background:linear-gradient(90deg,var(--accent),#2be0ff);color:#031214;padding:8px 14px;border-radius:12px;font-weight:600}
+
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:36px;align-items:center;margin-top:18px}
+    .hero-left h1{font-size:46px;margin:0 0 8px}
+    .hero-left h1 small{display:block;font-size:18px;color:var(--muted);font-weight:600}
+    .hero-left p{color:var(--muted);line-height:1.6}
+    .hero-actions{margin-top:18px;display:flex;gap:12px}
+
+
+    /* btn resume */
+ .btn-resume{
+  padding:10px 16px;
+  border-radius:12px;
+  border:2px solid var(--accent);
+  background:transparent;
+  color:var(--accent);
+  font-weight:600;
+  transition:0.3s;
+}
+.btn-resume:hover{
+  background:var(--accent);
+  color:#031214;
+  transform:scale(1.05);
+}
+
+    /* PROFILE CIRCLE */
+    .profile-wrap{display:flex;align-items:center;justify-content:center}
+    .profile{
+      width:300px;height:300px;border-radius:50%;background:radial-gradient(circle at 30% 30%, rgba(0,192,214,0.14), transparent 30%), linear-gradient(180deg,#071018, #00121a);
+      box-shadow:0 0 80px rgba(0,192,214,0.12), inset 0 0 12px rgba(255,255,255,0.02);
+      display:flex;align-items:center;justify-content:center;position:relative;border:4px solid rgba(0,192,214,0.12)
+    }
+    .profile img{width:220px;height:220px;border-radius:50%;object-fit:cover; object-position: 50%; border:6px solid rgba(11,11,16,0.65)}
+    .role{margin-top:12px;text-align:center;color:#454949;font-weight:600;}
+
+    /* ABOUT SECTION */
+    section{margin-top:48px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:22px;border-radius:14px;border:1px solid rgba(255,255,255,0.03)}
+
+    .about-grid{display:grid;grid-template-columns:1fr 320px;gap:26px;align-items:start}
+    .about-grid p{color:var(--muted)}
+
+    /* EDUCATION */
+    .edu-list{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:16px}
+    .edu-item{background:var(--glass);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+    .edu-item h4{margin:0 0 6px}
+    .edu-item small{color:var(--muted)}
+
+    /* SKILLS */
+    .skills{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:16px}
+    .skill{background:transparent;padding:12px;border-radius:10px}
+    .skill .label{display:flex;justify-content:space-between;font-weight:600}
+    .bar{height:10px;background:rgba(255,255,255,0.05);border-radius:8px;margin-top:8px;overflow:hidden}
+    .bar > span{display:block;height:100%;border-radius:8px;background:linear-gradient(90deg,var(--accent),#40e6ff);width:60%}
+
+    /* PROJECTS */
+    .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:16px}
+    .project-card{background:var(--glass);padding:16px;border-radius:14px;border:1px solid rgba(255,255,255,0.03);display:flex;flex-direction:column}
+    .project-card img{width:100%;border-radius:10px;margin-bottom:12px}
+    .project-card h4{margin: 0 0 8px}
+    .project-card p{color:var(--muted);flex-grow:1;margin-top:5px;}
+    .project-card a{margin-top:5px;align-self:flex-start;padding:6px 12px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#2be0ff);color:#021416;font-weight:600;font-size:14px}
+
+    /* CONTACT */
+    .contact-form{display:flex;flex-direction:column;gap:10px}
+    .contact-form input,.contact-form textarea{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);padding:12px;border-radius:10px;color:inherit}
+    .contact-form button{margin-top:6px;padding:10px 14px;border-radius:10px;border:0;background:linear-gradient(90deg,var(--accent),#2be0ff);color:#021416;font-weight:700;cursor: pointer;}
+
+    footer{margin:36px 0 18px;color:var(--muted);text-align:center}
+
+
+
+/* ================= RESPONSIVE STYLES ================= */
+
+/* Tablet screens */
+@media (max-width:980px){
+  .hero {
+    grid-template-columns: 1fr 300px;
+  }
+  .profile {
+    width: 240px;
+    height: 240px;
+  }
+  .profile img {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+/* Mobile screens */
+@media (max-width:720px){
+  /* Hero section */
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .hero-left h1 {
+    font-size: 32px;
+  }
+
+  /* Header */
+  header {
+    padding: 8px 0;
+    position: relative;
+  }
+  .container {
+    padding: 14px;
+  }
+
+  /* Burger button base */
+  .burger {
+    display: block;   /* only visible on mobile */
+    width: 44px;
+    height: 36px;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    padding: 6px;
+    position: relative;
+    z-index: 1100;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Burger bars */
+  .burger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: var(--accent);
+    border-radius: 3px;
+    margin: 6px 0;
+    transition: transform 0.35s ease, opacity 0.25s ease;
+    transform-origin: center;
+  }
+
+  /* Burger active → X */
+  .burger.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+  .burger.active span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  .burger.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+
+  /* Nav menu hidden by default */
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: var(--panel);
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    padding: 16px;
+    border-radius: 12px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+
+  /* Nav menu when active */
+  nav.show {
+    max-height: 500px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Grids stack into 1 column */
+  .about-grid,
+  .edu-list,
+  .skills,
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Profile image smaller */
+  .profile {
+    width: 200px;
+    height: 200px;
+  }
+  .profile img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+   footer{margin:36px 0 18px;color:var(--muted);text-align:center}
+    footer .social-links{margin-bottom:10px;display:flex;justify-content:center;gap:20px}
+    footer .social-links a{
+      color:var(--accent);
+      font-size:25px;
+      transition:0.3s;
+    }
+    footer .social-links a:hover{color:#fff;transform:scale(1.2)}
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+  <div class="logo">
+    <img src="logo.png" alt="Arvind Yadav Logo">
+  </div>
+ <button id="themeToggle" style="background:none;border:none;cursor:pointer;font-size:20px;color:var(--accent);" aria-label="Toggle theme">
+  🌙
+</button>
+  <!-- Burger button: 3 spans (bars) -->
+  <button class="burger" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <nav id="navMenu">
+    <a href="#home" class="active">Home</a>
+    <a href="#about">About Me</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#certificates">Certificates</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+    <a href="resume.pdf" class="btn-cta" target="_blank"><i class="fas fa-download"></i> Resume</a>
+  </nav>
+</header>
+
+
+
+    <main>
+      <section id="home" class="hero">
+        <div class="hero-left">
+          <h1>I'm <strong style="color:var(--accent)">Arvind Yadav</strong><span class="wave">👋</span><small> — Frontend Developer</small></h1>
+          <p>Hi! I build responsive, modern user interfaces using HTML, CSS and JavaScript. I love clean code, attention to detail and creating experiences that feel smooth and alive.</p>
+  <div class="hero-actions">
+  <a class="btn-cta" href="#contact">Hire Me</a>
+  <a href="#about" style="padding:10px 12px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.03);">View Portfolio</a>
+  <a href="resume.pdf" class="btn-resume" target="_blank">
+<i class="fas fa-download"></i> Resume
+  </a>
+</div>
+ </div>
+
+        <div class="profile-wrap">
+          <div class="profile">
+            <!-- Replace src with your image path -->
+            <img src="arvind (2).jpg" alt="Arvind Yadav">
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="card">
+        <div class="about-grid">
+          <div>
+            <h2 style="margin-top:0">About Me</h2>
+            <p>I am a frontend developer specializing in creating modern, responsive portfolio websites like this one. I primarily use HTML, CSS and JavaScript and enjoy polishing UI micro-interactions and visual design details.</p>
+            <p>I build accessible and performance-conscious websites that look great across devices. This template uses a dark theme with a teal accent color and circular profile artwork for a strong personal brand.</p>
+          </div>
+          <aside class="card">
+            <div style="text-align:center">
+              <div style="font-weight:700">Frontend Developer</div>
+              <div class="role">HTML • CSS • JavaScript • React •Php </div>
+            </div>
+            <div style="margin-top:12px">
+              <div style="font-weight:700">Contact</div>
+              <div style="color:var(--muted);margin-top:6px">📩 yadavarvind7646@gamil.com<br> 📞 +91  7260081528</div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="education">
+        <h3 style="margin-top:22px">My Education</h3>
+        <div class="edu-list">
+          <div class="edu-item">
+            <h4>Bachelor of Computer Application (BCA) — 1st year </h4>
+            <small>Yashwamtrao Chavan Maharashtra Open University (ycmou) • 2025 - 2028</small>
+            <p style="color:var(--muted);margin-top:8px">Studied fundamentals of programming, data structures and web development.</p>
+          </div>
+          <div class="edu-item">
+            <h4>Diploma in Web Design - (GRADE : A)</h4>
+            <small>I TECH COMPUTER EDUCATION  • 2024 - 2025</small>
+            <p style="color:var(--muted);margin-top:8px">Focused on HTML, CSS,JavaScript,React, responsive layouts and UI/UX basics.</p>
+          </div>
+          <div class="edu-item">
+            <h4>12th (PCM + CS) - CBSE Board - (59%) </h4>
+            <small> Vidya Varidhi Vidyalaya & Jr.College Nallasopara(E) Mumbai - 401209>  • 2023 - 2025</small>
+            <p style="color:var(--muted);margin-top:8px">Focused on  Physics ,Chemistry , Mathematics ,English, Computer science .</p>
+          </div>
+          <div class="edu-item">
+            <h4>10th  - State Board (JAC) - (89%) </h4>
+            <small> St.Anne's English Medium School (Jharkhand) • 2023 </small>
+            <p style="color:var(--muted);margin-top:8px">Focused On  All Subject  .</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skill Section  -->
+<style>
+
+
+/* ===== SKILLS SECTION ===== */
+#skills{
+  padding:40px 20px;
+  background:var(--glass);
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.05);
+  color:#fff;
+}
+
+#skills h3{
+  text-align:center;
+  font-size:28px;
+  margin-bottom:30px;
+}
+
+/* GRID */
+.skills{
+  max-width:1100px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+  gap:20px;
+}
+
+/* SKILL BOX */
+.skill{
+  background:#16192b;
+  padding:14px;
+  border-radius:10px;
+  box-shadow:0 6px 16px rgba(0,0,0,0.35);
+  cursor: pointer;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:space-evenly;
+
+  min-height:110px;
+  text-align:center;
+}
+
+/* ICON */
+.skill i{
+  font-size:32px;
+  line-height:1;
+}
+
+/* TEXT */
+.skill h4{
+  font-size:14px;
+  margin:0;
+  font-weight:600;
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  #skills h3{
+    font-size:24px;
+  }
+}
+</style>
+<section id="skills">
+  <h3>My Skills</h3>
+
+  <div class="skills">
+
+    <div class="skill">
+      <i class="fa-brands fa-html5 fa-beat-fade" style="color:#e34c26;"></i>
+      <h4>HTML</h4>
+    </div>
+
+    <div class="skill">
+      <i class="fa-brands fa-css3-alt fa-beat-fade" style="color:#264de4;"></i>
+      <h4>CSS</h4>
+    </div>
+
+    <div class="skill">
+      <i class="fa-brands fa-js fa-beat-fade" style="color:#f7df1e;"></i>
+      <h4>JavaScript</h4>
+    </div>
+
+    <div class="skill">
+      <i class="fa-brands fa-react fa-beat-fade" style="color:#61dafb;"></i>
+      <h4>React</h4>
+    </div>
+
+    <div class="skill">
+      <i class="fa-solid fa-code fa-beat-fade" style="color:#22c55e;"></i>
+      <h4>C Language</h4>
+    </div>
+
+     <div class="skill">
+      <i class="fa-solid fa-code fa-beat-fade" style="color:#22c55e;"></i>
+      <h4>C++ Language</h4>
+    </div>
+
+     <div class="skill">
+      <i class="fa-brands fa-php fa-beat-fade" style="color:#4f566b;"></i>
+      <h4>Php</h4>
+    </div>
+
+    <div class="skill">
+      <i class="fa-solid  fa-database fa-beat-fade" style="color:#4f566b;"></i>
+      <h4>MySQL</h4>
+    </div>
+
+    <div class="skill">
+      <i class="fa-solid fa-file-word fa-beat-fade" style="color:#2b579a;"></i>
+      <h4>MS Word</h4>
+    </div>
+
+    <div class="skill">
+      <i class="fa-solid fa-file-excel fa-beat-fade" style="color:#217346;"></i>
+      <h4>MS Excel</h4>
+    </div>
+
+    <div class="skill">
+      <i class="fa-brands fa-github fa-beat-fade"></i>
+      <h4>github</h4>
+    </div>
+
+  </div>
+</section>
+<style>
+/* ===== CERTIFICATES SECTION ===== */
+#certificates{
+  margin-top:50px;
+  padding:40px 20px;
+  background:var(--glass);
+  border-radius:14px;
+}
+
+#certificates h3{
+  text-align:center;
+  font-size:28px;
+  margin-bottom:30px;
+}
+
+.cert-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+}
+
+.cert-card{
+  background:var(--panel);
+  border-radius:14px;
+  overflow:hidden;
+  cursor:pointer;
+  box-shadow:0 10px 25px rgba(0,0,0,0.4);
+  transition:0.3s;
+}
+
+.cert-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 40px rgba(0,192,214,0.3);
+}
+
+.cert-card img{
+  width:100%;
+  height:250px;
+  object-fit:cover;
+}
+
+.cert-info{
+  padding:14px;
+  text-align:center;
+}
+
+.cert-info h4{
+  margin:0;
+  font-size:16px;
+}
+
+.cert-info p{
+  margin-top:6px;
+  font-size:14px;
+  color:var(--muted);
+}
+
+/* ===== MODAL ===== */
+.cert-modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.85);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  opacity:0;
+  pointer-events:none;
+  transition:0.3s;
+  z-index:2000;
+}
+
+.cert-modal.show{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.cert-modal img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:12px;
+  box-shadow:0 0 40px rgba(0,192,214,0.4);
+  animation:zoom 0.3s ease;
+}
+
+@keyframes zoom{
+  from{transform:scale(0.8);opacity:0}
+  to{transform:scale(1);opacity:1}
+}
+
+.cert-close{
+  position:absolute;
+  top:20px;
+  right:30px;
+  font-size:38px;
+  color:white;
+  cursor:pointer;
+}
+
+.cert-close:hover{color:var(--accent)}
+</style>
+</head>
+
+
+
+<!-- ===== CERTIFICATES ===== -->
+<section id="certificates">
+  <h3>My Certificates</h3>
+
+  <div class="cert-grid">
+
+    <div class="cert-card" data-img="certificate1.jpg">
+      <img src="certificate1.jpg" alt="">
+      <div class="cert-info">
+        <h4>Web Development</h4>
+        <p>I Tech Computer Education</p>
+      </div>
+    </div>
+
+    <div class="cert-card" data-img="certificate2.jpg">
+      <img src="certificate2.jpg" alt="">
+      <div class="cert-info">
+        <h4>C & C++</h4>
+        <p>I Tech Computer Education</p>
+      </div>
+    </div>
+
+    <div class="cert-card" data-img="certificate3.jpg">
+      <img src="certificate3.jpg" alt="">
+      <div class="cert-info">
+        <h4>PHP & MySQL</h4>
+        <p>Backend Training</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== MODAL HTML ===== -->
+<div id="certModal" class="cert-modal">
+  <span class="cert-close">&times;</span>
+  <img id="certModalImg">
+</div>
+
+<script>
+/* CERTIFICATE MODAL JS */
+const certCards=document.querySelectorAll(".cert-card");
+const modal=document.getElementById("certModal");
+const modalImg=document.getElementById("certModalImg");
+const closeBtn=document.querySelector(".cert-close");
+
+certCards.forEach(card=>{
+  card.addEventListener("click",()=>{
+    modalImg.src=card.dataset.img;
+    modal.classList.add("show");
+  });
+});
+
+closeBtn.onclick=()=>modal.classList.remove("show");
+
+modal.onclick=(e)=>{
+  if(e.target===modal) modal.classList.remove("show");
+};
+
+document.addEventListener("keydown",(e)=>{
+  if(e.key==="Escape") modal.classList.remove("show");
+});
+</script>
+
+<!-- PROJECTS -->
+<section id="projects">
+<h3 style="margin-top:22px">Projects</h3>
+
+<div class="projects-grid">
+<div class="project-card">
+<img src="Project1.png">
+<h4>Portfolio Website</h4>
+<p>Responsive portfolio using HTML, CSS, JS.</p>
+<a href="index.html">View Project</a>
+</div>
+
+
+<div class="project-card">
+<img src="project2.png">
+<h4>World's Biggest university</h4>
+<p>Responsive University using HTML, CSS, JS</p>
+<a href="webpage/webpage.html">View Project</a>
+</div>
+
+
+<div class="project-card">
+<img src="project3.png">
+<h4>Registration form</h4>
+<p>Registration form full validation.</p>
+<a href="webpage/registration form.html">View Project</a>
+</div>
+</div>
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact" class="card" style="margin-top:22px">
+<h3>Contact Me</h3>
+
+
+<form class="contact-form" onsubmit="submitContact(event)">
+<input type="text" id="name" placeholder="Your name" required>
+<input type="email" id="email" placeholder="Your email" required>
+<textarea id="message" rows="5" placeholder="Message" required></textarea>
+
+
+<button type="submit">Send Message</button>
+
+
+<button
+type="button"
+id="whatsappBtn"
+style="background:#07d445;color:white;padding:10px 18px;border:none;border-radius:8px;font-size:16px;"
+>
+📲 Send on WhatsApp
+</button>
+</form>
+</section>
+
+<footer>
+      <div class="social-links">
+        <a href="https://github.com/yourgithub" target="_blank"><i class="fab fa-github fa-beat-fade" style = "color:white"></i></a>
+        <a href="https://linkedin.com/in/yourlinkedin" target="_blank"><i class="fab fa-linkedin fa-beat-fade"></i></a>
+        <a href="https://instagram.com/yourinstagram" target="_blank"><i class="fab fa-instagram fa-beat-fade"style = "color:#C11C84"></i></a>
+        <a href="https://twitter.com/yourtwitter" target="_blank"><i class="fab fa-twitter fa-beat-fade"></i></a>
+      </div>
+      <p>© <span id="year"></span> Arvind Yadav — Built with HTML • CSS • JS</p>
+    </footer>
+
+
+  </div>
+<script>
+  // Your WhatsApp number with country code
+  const phone = "917260081528"; // <-- Apna WhatsApp number daalo
+
+  // Build WhatsApp URL with form data
+  function buildWhatsAppUrl(name, email, msg) {
+    const text =
+      `*New Contact Form Message*%0A` +
+      `Name: ${encodeURIComponent(name)}%0A` +
+      `Email: ${encodeURIComponent(email)}%0A` +
+      `Message: ${encodeURIComponent(msg)}`;
+    return `https://wa.me/${phone}?text=${text}`;
+  }
+  // Load saved theme
+if(localStorage.getItem("theme") === "light") document.body.classList.add("light");
+
+themeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("light");
+  const isLight = document.body.classList.contains("light");
+  themeToggle.textContent = isLight ? "🌙" : "☀️";
+  localStorage.setItem("theme", isLight ? "light" : "dark");
+});
+
+  // Toggle mobile menu
+  function toggleMenu() {
+    const nav = document.getElementById("navMenu");
+    const burger = document.querySelector(".burger");
+
+    const isOpen = nav.classList.toggle("show");
+    burger.classList.toggle("active", isOpen);
+
+    // Accessibility update
+    burger.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  }
+
+  // Contact form submit (demo only)
+  function submitContact(e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if (!name || !email || !message) {
+      alert("⚠️ Please fill in all fields before submitting.");
+      return;
+    }
+
+    alert(
+      `✅ Thanks ${name}! Your message has been sent (demo).\nI'll get back to you at ${email}.`
+    );
+
+    e.target.reset();
+  }
+
+  // Run after DOM loaded
+  document.addEventListener("DOMContentLoaded", () => {
+    const navLinks = document.querySelectorAll("#navMenu a");
+    const nav = document.getElementById("navMenu");
+    const burger = document.querySelector(".burger");
+    const yearEl = document.getElementById("year");
+    const whatsappBtn = document.getElementById("whatsappBtn");
+
+    // Close menu on nav link click (mobile UX)
+    navLinks.forEach((a) => {
+      a.addEventListener("click", () => {
+        if (nav.classList.contains("show")) {
+          nav.classList.remove("show");
+          burger.classList.remove("active");
+          burger.setAttribute("aria-expanded", "false");
+        }
+      });
+    });
+
+    // Set footer year automatically
+    if (yearEl) {
+      yearEl.textContent = new Date().getFullYear();
+    }
+
+    // WhatsApp button click
+    if (whatsappBtn) {
+      whatsappBtn.addEventListener("click", () => {
+        const name = document.getElementById("name").value || "—";
+        const email = document.getElementById("email").value || "—";
+        const msg = document.getElementById("message").value || "—";
+        const url = buildWhatsAppUrl(name, email, msg);
+        window.open(url, "_blank"); // open WhatsApp in new tab/app
+      });
+    }
+  });
+</script>
+</body>
+</html>

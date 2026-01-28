@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body{
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:url('image.jpg') center/cover no-repeat;
+    }
+
+    .register-box{
+      width:390px;
+      padding:30px;
+      border-radius:12px;
+      background:linear-gradient(135deg, skyblue, royalblue);
+      box-shadow:0 0 20px rgba(0,0,0,0.4);
+      text-align:center;
+    }
+
+    .register-box h1{
+      color:yellow;
+      margin-bottom:20px;
+      font-size:34px;
+    }
+
+    .error{
+      color:red;
+      font-size:16px;
+      margin-bottom:10px;
+    }
+
+    .register-box input[type="text"],
+    .register-box input[type="password"],
+    .register-box input[type="number"],
+    .register-box input[type="email"]{
+      width:100%;
+      padding:10px 40px 10px 10px; /* space for eye icon */
+      margin-bottom:12px;
+      border:none;
+      border-radius:5px;
+      background:#f2f2f2;
+      font-size:15px;
+      text-align:center;
+      position: relative;
+    }
+
+    .password-container{
+      position: relative;
+      width: 100%;
+      margin-bottom: 12px;
+    }
+
+    .password-container i{
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: #555;
+      font-size:18px;
+    }
+
+    .terms{
+      font-size:14px;
+      color:#000;
+      margin:10px 0;
+    }
+
+    .register-box button{
+      width:60%;
+      height:40px;
+      border-radius:20px;
+      border:1px solid red;
+      background:transparent;
+      color:#000;
+      font-size:16px;
+      cursor:pointer;
+      transition:0.4s;
+      margin:15px auto;
+      display:block;
+    }
+
+    .register-box button:hover{
+      background:red;
+      color:white;
+    }
+
+    .login-link{
+      font-size:15px;
+      color:#000;
+      margin-top:10px;
+    }
+
+    .login-link a{
+      color:red;
+      text-decoration:none;
+      font-weight:bold;
+    }
+
+    @media(max-width:480px){
+      .register-box{
+        width:90%;
+        padding:25px;
+      }
+      .register-box h1{
+        font-size:28px;
+      }
+      .register-box input[type="text"],
+      .register-box input[type="password"],
+      .register-box input[type="number"],
+      .register-box input[type="email"]{
+        font-size:14px;
+      }
+      .register-box button{
+        width:80%;
+      }
+    }
+  </style>
+  <!-- Font Awesome CDN for eye icon -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <form name="form" onsubmit="return validation()">
+    <div class="register-box">
+
+      <h1>Registration</h1>
+      <div id="error" class="error"></div>
+
+      <input type="text" name="username" placeholder="Enter Username">
+      <input type="email" name="Email" placeholder="Enter Email">
+
+      <div class="password-container">
+        <input type="password" name="password" id="password" placeholder="Enter Password">
+        <i class="fas fa-eye" id="togglePassword"></i>
+      </div>
+
+      <div class="password-container">
+        <input type="password" name="confirmpassword" id="confirmpassword" placeholder="Confirm Password">
+        <i class="fas fa-eye" id="toggleConfirmPassword"></i>
+      </div>
+
+      <input type="number" name="Mobile" placeholder="Phone Number">
+
+      <div class="terms">
+        <input type="checkbox" id="condition"> Accept all terms & conditions
+      </div>
+
+      <button type="submit">CREATE ACCOUNT</button>
+
+      <div class="login-link">
+        Already have an account ? <a href="login.html">LOGIN</a>
+      </div>
+
+    </div>
+  </form>
+
+  <script>
+    // Toggle Password
+    const togglePassword = document.getElementById('togglePassword');
+    const password = document.getElementById('password');
+    togglePassword.addEventListener('click', () => {
+      const type = password.type === 'password' ? 'text' : 'password';
+      password.type = type;
+      togglePassword.classList.toggle('fa-eye-slash');
+    });
+
+    const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
+    const confirmpassword = document.getElementById('confirmpassword');
+    toggleConfirmPassword.addEventListener('click', () => {
+      const type = confirmpassword.type === 'password' ? 'text' : 'password';
+      confirmpassword.type = type;
+      toggleConfirmPassword.classList.toggle('fa-eye-slash');
+    });
+
+    // Form Validation
+    function validation(){
+      let f = document.form;
+      let error = document.getElementById("error");
+      error.innerHTML = "";
+
+      // Username
+      if(f.username.value.trim() === ""){
+        error.innerHTML = "Please enter username";
+        return false;
+      }
+
+      // Email validation
+      if(f.Email.value.trim() === ""){
+        error.innerHTML = "Please enter email";
+        return false;
+      }
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if(!emailPattern.test(f.Email.value)){
+        error.innerHTML = "Please enter a valid email";
+        return false;
+      }
+
+      // Password
+      if(f.password.value === ""){
+        error.innerHTML = "Please enter password";
+        return false;
+      }
+      if(f.password.value.length < 6 || f.password.value.length > 12){
+        alert("Password must be 6–12 characters");
+        return false;
+      }
+
+      if(f.confirmpassword.value === ""){
+        error.innerHTML = "Please confirm password";
+        return false;
+      }
+      if(f.confirmpassword.value !== f.password.value){
+        error.innerHTML = "Passwords do not match";
+        return false;
+      }
+
+      // Mobile
+      if(f.Mobile.value === "" || f.Mobile.value.length !== 10){
+        alert("Phone number must be 10 digits");
+        return false;
+      }
+
+      // Terms
+      if(!document.getElementById("condition").checked){
+        alert("Please accept terms & conditions");
+        return false;
+      }
+
+      return true;
+    }
+  </script>
+
+</body>
+</html>

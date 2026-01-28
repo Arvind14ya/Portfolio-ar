@@ -1,0 +1,496 @@
+<style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    html,body{
+      overflow-x:hidden;
+    }
+
+    /* ================= BANNER ================= */
+    .banner{
+      min-height:100vh;
+      width:100%;
+      background:
+        linear-gradient(rgba(4,9,30,.7),rgba(4,9,30,.7)),
+        url(img1.jpg) center/cover no-repeat;
+    }
+
+    /* ================= NAVBAR ================= */
+    .navbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:18px 30px;
+      position:relative;
+      z-index:1000;
+    }
+
+    .logo img{
+      height:45px;
+    }
+
+    .nav-links{
+      list-style:none;
+      display:flex;
+      gap:30px;
+    }
+
+    .nav-links a{
+      text-decoration:none;
+      color:#fff;
+      font-weight:600;
+      font-size:14px;
+    }
+
+    /* ================= HAMBURGER ================= */
+    .burger{
+      display:none;
+      flex-direction:column;
+      gap:6px;
+      background:none;
+      border:none;
+      cursor:pointer;
+    }
+
+    .burger span{
+      width:26px;
+      height:3px;
+      background:#fff;
+      transition:0.3s;
+    }
+
+    .burger.active span:nth-child(1){
+      transform:rotate(45deg) translate(5px,5px);
+    }
+    .burger.active span:nth-child(2){
+      opacity:0;
+    }
+    .burger.active span:nth-child(3){
+      transform:rotate(-45deg) translate(6px,-6px);
+    }
+
+    /* ================= HERO TEXT ================= */
+    .hero{
+      text-align:center;
+      color:#fff;
+      max-width:800px;
+      margin:180px auto 0;
+      padding:0 20px;
+    }
+
+    .hero h1{
+      font-size:64px;
+      margin-bottom:20px;
+    }
+
+    .hero p{
+      font-size:16px;
+      line-height:1.6;
+      margin-bottom:30px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:12px 28px;
+      border:1px solid #fff;
+      color:#fff;
+      text-decoration:none;
+      font-size:14px;
+      transition:.3s;
+    }
+
+    .btn:hover{
+      background:#f44336;
+      border-color:#f44336;
+    }
+
+    /* ================= MOBILE ================= */
+    @media(max-width:768px){
+      .burger{
+        display:flex;
+      }
+
+      .nav-links{
+        position:absolute;
+        top:70px;
+        left:0;
+        width:100%;
+        background:rgba(4,9,30,.95);
+        flex-direction:column;
+        align-items:center;
+        display:none;
+        padding:25px 0;
+      }
+
+      .nav-links.show{
+        display:flex;
+      }
+
+      .hero h1{
+        font-size:38px;
+      }
+    }
+    
+.heading-text{
+	width: 70%;
+	/*background-color: darkred;*/
+	margin:230px auto 0px;
+	text-align: center;
+
+}
+.heading-text h1{
+	font-size:90px;
+	color: white;
+}
+/* ===== COURSES SECTION ===== */
+.courses{
+  padding:70px 8%;
+  background:#fff;
+}
+
+.courses-heading{
+  text-align:center;
+  max-width:720px;
+  margin:0 auto 45px;
+}
+
+.courses-heading h3{
+  font-size:32px;
+  margin-bottom:10px;
+}
+
+.courses-heading p{
+  font-size:15px;
+  color:#666;
+  line-height:1.6;
+}
+
+/* GRID */
+.courses-box{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+  gap:25px;
+}
+
+/* CARD */
+.course-card{
+  background:#ffecec;
+  padding:28px 22px;     /* ✅ proper inner spacing */
+  border-radius:12px;
+  text-align:center;
+  box-sizing:border-box; /* ✅ keeps content inside */
+  display:flex;          /* ✅ equal height fix */
+  flex-direction:column;
+  justify-content:flex-start;
+}
+
+.course-card h4{
+  margin-bottom:12px;
+  font-size:22px;
+  color:#000;
+}
+
+.course-card p{
+  font-size:15px;
+  line-height:1.7;
+  color:#444;
+  margin:0;
+}
+
+/* HOVER (optional) */
+.course-card:hover{
+  transform:translateY(-6px);
+  transition:0.3s ease;
+  box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+/* #d{position:absolute;
+	left:25%;
+	top:360px;
+	font-size:20px;
+	color: white;
+	text-align: center;
+}
+
+.id1{
+	width:250px;
+	height: 35px;
+	position:absolute;
+	left:40%;
+	top:500px;
+	font-size:15px;
+
+}
+
+h3{
+	position: relative;
+	text-align: center;
+	margin:40px auto;
+	font-size: 40px;
+	
+}
+ #h{
+	position: relative;
+	color: gray;
+	text-align: center;
+	margin-bottom: 50px;
+}
+.boxmain{
+	height: 500px;
+	width:100%;
+	margin: 0;
+	padding: 0;
+
+}
+.box{
+	position:absolute;
+	left: 220px;
+	width: 400px;
+	height: 150px;
+	background-color: lightpink;
+	border: 1px solid black;
+	text-align: center;
+
+}
+#b{
+	left: 650px;
+}
+#c{
+	left: 1080px;
+} */
+
+.campus h2 {
+	position:relative;
+	left: 40%;
+	bottom: 300px;
+	font-size: 245%;
+
+}
+.campus p{
+	position:relative;
+	left: 43%;
+	bottom: 300px;
+	margin: 10px;
+	color: gray;
+	
+}
+.boximg1{
+	height:370px;
+	width: 230px;
+	border: 2px solid black;
+	background-image: url(myhc_305339.jpg);
+	background-size: cover;
+	background-position: center;
+	position: relative;
+	left: 435px;
+	bottom: 250px;
+	text-align: center;
+	border-radius: 10px;
+
+
+}
+.boximg1 p{
+
+	color:blanchedalmond;
+}
+
+.boximg2{
+	height:370px;
+	width: 230px;
+	border: 2px solid black;
+	background-image: url(116040016.jpg);
+	background-size: cover;
+	background-position: center;
+	position: relative;
+	left: 750px;
+	bottom: 625px;
+	text-align: center;
+	border-radius: 10px;
+
+}
+
+.boximg2 p{
+
+	color:blanchedalmond;
+
+}
+
+.boximg3{
+	height:370px;
+	width: 230px;
+	border: 2px solid black;
+	background-image: url(DCU-Glasnevin-GV-49-1.jpg);
+	background-size: cover;
+	background-position: center;
+	position: relative;
+	left:1060px;
+	bottom: 998px;
+	text-align: center;
+	border-radius: 10px;
+
+}
+.boximg3 p{
+
+	color:black;
+	
+}
+.facilities h3{
+	 position:relative;
+	bottom:950px;
+	font-size:275%;
+
+}
+.facilities p{
+	position:relative;
+	left: 44%;
+	bottom:960px;
+	color: gray;
+}
+.library{
+	background-image: url(Selection-policies-of-College-Library.jpg);
+	height:320px;
+	width: 360px;
+	border: 2px solid black;
+	background-size: cover;
+	background-position: center;
+	position: relative;
+	left: 140px;
+	bottom:900px;
+	text-align: center;
+	border-radius: 10px;
+
+}
+.library p{
+	color:darkgoldenrod;
+	font-size:18px;
+	margin: 5px;
+
+}
+.ground{
+	background-image:url(Furen-high-school-playground-wuxi-china.jpg);
+	height:320px;
+	width: 360px;
+	border: 2px solid black;
+	background-size: cover;
+	background-position: center;
+	position: relative;
+	left: 600px;
+	bottom:1230px;
+	text-align: center;
+	border-radius: 10px;
+
+}
+.ground p{
+	color:darkgoldenrod;
+	font-size:18px;
+	margin: 5px;
+}
+
+
+.food{
+	background-image:url(istockphoto-1186216598-612x612.jpg);
+	height:320px;
+	width: 360px;
+	border: 2px solid black;
+	background-size: cover;
+	background-position: center;
+	position: relative;
+	left: 1050px;
+	bottom:1560px;
+	text-align: center;
+	border-radius: 10px;
+}
+.food p{
+	color:red;
+	font-size:18px;
+	margin: 5px;
+}
+p1{
+	position: absolute;
+	top:330px;
+	left:100px;
+	font-size:18px;
+
+}
+#w p{
+	position: absolute;
+	top:350px;
+	left:10px;
+	color: gray;
+}
+p2{
+	position: absolute;
+	top:330px;
+	left:100px;
+	font-size:18px;
+}
+#g p{
+	position:absolute;
+	top:350px;
+	left:10px;
+	color: gray;
+}
+p3{
+	position: absolute;
+	top:330px;
+	left:100px;
+	font-size:18px;
+}
+#f p{
+	position: absolute;
+	top:350px;
+	left:10px;
+	color: gray;
+}
+.student h4{
+	position:relative;
+	text-align: center;
+	bottom:1350px;
+	font-size:275%;
+
+}
+.student p{
+	position:relative;
+	text-align: center;
+	bottom:1340px;
+	color: gray;
+}
+.boxstar h4{
+	height:150px;
+	width: 450px;
+	background-color: lightpink;
+	position: relative;
+	left: 150px;
+	bottom:1250px;
+	text-align: center;
+	}
+.boxstar h3{
+	position: relative;
+	right:480px;
+	bottom:1350px;
+	font-size:21px;
+	 
+} 
+.boxstar1 h4{
+	height:150px;
+	width: 450px;
+	background-color: lightpink;
+	position:relative;
+	left: 900px;
+	bottom:1480px;
+	text-align: center;
+	}
+.boxstar1 h3{
+	position:relative;
+	left:270px;
+	bottom:1580px;
+	font-size:21px;
+	 
+} 
+
+footer{
+	text-align:right;
+}

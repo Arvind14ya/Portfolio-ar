@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Courses</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+/* ===== HEADER ===== */
+.courses-header{
+  min-height:40vh;
+  background:
+    linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)),
+    url(academy-celebrate-celebration-267885-1-1024x683.jpg);
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  position:relative;
+}
+
+.banner-icon{
+  position:absolute;
+  top:20px;
+  left:20px;
+}
+
+.banner-icon img{
+  width:60px;
+  height:60px;
+}
+
+.courses-header h3{
+  font-size:42px;
+}
+
+/* ===== TITLE ===== */
+.section-title{
+  text-align:center;
+  margin:50px 0 10px;
+}
+
+.section-title h3{
+  font-size:36px;
+}
+
+.section-title p{
+  color:#666;
+}
+
+/* ===== MAIN LAYOUT ===== */
+.main-container{
+  max-width:1200px;
+  margin:40px auto;
+  padding:0 20px;
+  display:grid;
+  grid-template-columns:3fr 1.2fr;
+  gap:30px;
+}
+
+/* ===== COURSES ===== */
+.course-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+  gap:25px;
+}
+
+.course-box{
+  background:lightpink;
+  padding:20px;
+  border-radius:12px;
+  text-align:center;
+  box-shadow:0 6px 18px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+
+.course-box:hover{
+  transform:translateY(-6px);
+}
+
+.course-box h4{
+  margin-bottom:10px;
+}
+
+/* ===== SIDE EXTRA ===== */
+.side-box{
+  background:#f9f9f9;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.08);
+}
+
+.side-box h3{
+  font-size:22px;
+  margin-bottom:15px;
+  color:red;
+}
+
+.side-box ul{
+  list-style:none;
+}
+
+.side-box li{
+  margin-bottom:12px;
+  font-size:14px;
+  color:#444;
+}
+
+.side-box i{
+  color:green;
+  margin-right:8px;
+}
+
+/* ===== FOOTER ===== */
+.about{
+  margin-top:60px;
+  text-align:center;
+  padding:40px 20px;
+  background:#f2f2f2;
+}
+
+.about h3{
+  color:red;
+  margin-bottom:10px;
+}
+
+.about p{
+  color:#444;
+  margin-bottom:20px;
+}
+
+.about i{
+  font-size:18px;
+  margin:0 10px;
+  cursor:pointer;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .main-container{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<script>
+  alert("Welcome to my courses");
+</script>
+
+<!-- HEADER -->
+<section class="courses-header">
+  <div class="banner-icon">
+    <img src="nav-icon.jpg" alt="logo">
+  </div>
+  <h3>Our Courses</h3>
+</section>
+
+<!-- TITLE -->
+<div class="section-title">
+  <h3>Courses We Offer</h3>
+  <p>We offer industry-focused courses designed to build strong fundamentals, 
+	practical skills, and career-ready knowledge for students at every level.</p>
+</div>
+
+<!-- MAIN -->
+<section class="main-container">
+
+  <!-- COURSES -->
+  <div class="course-grid">
+
+    <div class="course-box">
+      <h4>Intermediate</h4>
+      <p>Our Intermediate programs focus on building a strong academic foundation.
+Students gain conceptual clarity, problem-solving skills, and preparation
+for higher education and competitive exams.</p>
+    </div>
+
+    <div class="course-box">
+      <h4>Degree</h4>
+      <p>Our Degree courses are designed to provide in-depth subject knowledge,
+		practical exposure, and real-world skills that help students succeed in
+		their professional careers.</p>
+    </div>
+
+    <div class="course-box">
+      <h4>Post Graduation</h4>
+      <p>Post Graduation programs emphasize advanced learning, research skills,
+		and industry-oriented training to help students achieve academic and
+		professional excellence.</p>
+    </div>
+
+  </div>
+
+  <!-- SIDE EXTRA -->
+  <aside class="side-box">
+    <h3>Why Choose Us</h3>
+    <ul>
+      <li><i class="fa fa-check"></i> Experienced Faculty</li>
+      <li><i class="fa fa-check"></i> Modern Classrooms</li>
+      <li><i class="fa fa-check"></i> Online & Offline Courses</li>
+      <li><i class="fa fa-check"></i> Affordable Fees</li>
+      <li><i class="fa fa-check"></i> Career Guidance</li>
+    </ul>
+  </aside>
+
+</section>
+
+<!-- FOOTER -->
+<section class="about">
+  <h3>About Us</h3>
+  <p>We are committed to providing quality education that empowers students
+with knowledge, skills, and confidence. Our goal is to shape future leaders
+through innovation, discipline, and excellence in education.</p>
+
+  <i class="fa-brands fa-facebook" style="color:darkblue;"></i>
+  <i class="fa-brands fa-instagram" style="color:darkred;"></i>
+  <i class="fa-brands fa-twitter" style="color:darkslateblue;"></i>
+  <i class="fa-brands fa-youtube" style="color:darkred;"></i>
+</section>
+
+</body>
+</html>

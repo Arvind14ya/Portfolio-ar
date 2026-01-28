@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>pailendrome number </title>
+</head>
+<body>
+	<script>
+		// pailendrome number like as 11,44,55,101,202,303;
+
+	// 	 n=parseInt(prompt("Enter the number :"));
+	// 	 t=n;
+	// 	 s=0;
+	// 	 while(n>0){
+	// 	 	a=parseInt(n%10);
+	// 	 	s=parseInt(s*10+a);
+	// 	 	n=parseInt(n/10);
+	// 	 }
+      // if(t==s){
+      // 	document.write("Its a pailendromenumber")
+
+      // }
+      // else{
+      // 	document.write("Its not a pailendrome number")
+      // }
+      p=parseInt(prompt("Enter the number :"))
+      t=p;
+      s=0;
+      while(p>0){
+      	a=parseInt(p%10);
+      	s=parseInt(s*10+a);
+      	p=parseInt(p/10);
+      }
+      if(t==s){
+      	document.write("Its a pailendrome number")
+      }else{
+      	document.write("Its not a pailendrome number")
+      }
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Armstrong number </title>
+</head>
+<body>
+	<script>
+		// Armstrong number:153,370,371,407
+		 n=parseInt(prompt("Enter the number :"));
+		 t=n;
+		 s=0;
+		 while(n>0){
+		 	a=parseInt(n%10);
+		 	s=parseInt(s+a*a*a);
+		 	n=parseInt(n/10);
+		 }
+      if(t==s){
+      	document.write("Its a Armstrong number")
+
+      }
+      else{
+      	document.write("Its not a Armstrong number")
+      }
+      
+	</script>
+
+</body>
+</html>
