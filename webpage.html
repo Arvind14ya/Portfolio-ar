@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>University Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <section class="banner">
+
+    <nav class="navbar">
+      <div class="logo">
+        <img src="nav-icon.jpg" alt="logo">
+      </div>
+
+      <button class="burger" onclick="toggleMenu(this)">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="navMenu">
+        <li><a href="#">HOME</a></li>
+        <li><a href="about_us .html">ABOUT</a></li>
+        <li><a href="our_course.html">COURSE</a></li>
+        <li><a href="blog.html">BLOG</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+        <li><a href="form validation2.html">LOGIN</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero">
+      <h1>World's Biggest University</h1>
+      <p>
+        Education opens up the mind, expands it and allows you to improve your life
+        in so many ways. This is one of the most important motivational quotes to
+        study hard.
+      </p>
+      <a href="registration form.html" class="btn">Visit Us To Know More</a>
+    </div>
+
+  </section>
+
+  <script>
+    function toggleMenu(btn){
+      document.getElementById("navMenu").classList.toggle("show");
+      btn.classList.toggle("active");
+    }
+  </script>
+	<!-- ...............COURSES.......... -->
+<section class="courses">
+
+  <div class="courses-heading">
+    <h3>Courses We Offer</h3>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      Lorem ipsum dolo tempor incididunt ut labore elaborum.
+    </p>
+  </div>
+
+  <div class="courses-box">
+    <div class="course-card">
+      <h4>Intermediate</h4>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip.
+      </p>
+    </div>
+
+    <div class="course-card">
+      <h4>Degree</h4>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip.
+      </p>
+    </div>
+
+    <div class="course-card">
+      <h4>Post Graduation</h4>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip.
+      </p>
+    </div>
+  </div>
+
+</section>
+	<!-- ............... CAMPUS .......... -->
+<section class="campus">
+
+  <div class="campus-heading">
+    <h3>Our Global Campus</h3>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      Lorem ipsum dolo tempor incididunt ut labore elaborum.
+    </p>
+  </div>
+
+  <div class="campus-container">
+
+    <div class="campus-card">
+      <img src="London.jfif" alt="London Campus">
+      <div class="campus-layer">
+        <h4>London</h4>
+      </div>
+    </div>
+
+    <div class="campus-card">
+      <img src="New York.jfif" alt="New York Campus">
+      <div class="campus-layer">
+        <h4>New York</h4>
+      </div>
+    </div>
+
+    <div class="campus-card">
+      <img src="Washington.jfif" alt="Washington Campus">
+      <div class="campus-layer">
+        <h4>Washington</h4>
+      </div>
+    </div>
+
+  </div>
+</section>
+	<!-- ........... FACILITIES .......... -->
+<section class="facilities">
+
+  <div class="facilities-heading">
+    <h3>Our Facilities</h3>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      Lorem ipsum dolo tempor incididunt ut labore elaborum.
+    </p>
+  </div>
+
+  <div class="facilities-container">
+
+    <div class="facility-card">
+      <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f" alt="Library">
+      <div class="facility-content">
+        <h4>World Class Library</h4>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+          sed do eiusmod tempor incididunt ut labore etc.
+        </p>
+      </div>
+    </div>
+
+    <div class="facility-card">
+      <img src="ground.jpeg" alt="Play Ground">
+      <div class="facility-content">
+        <h4>Largest Play Ground</h4>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+          sed do eiusmod tempor incididunt ut labore etc.
+        </p>
+      </div>
+    </div>
+
+    <div class="facility-card">
+      <img src="Food.webp" alt="Food">
+      <div class="facility-content">
+        <h4>Tasty & Healthy Food</h4>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+          sed do eiusmod tempor incididunt ut labore etc.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- ............. STUDENT SAY .......... -->
+<section class="student-say">
+
+  <div class="student-heading">
+    <h3>What Our Students Say</h3>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      Lorem ipsum dolo tempor incididunt ut labore elaborum.
+    </p>
+  </div>
+
+  <div class="student-container">
+
+    <div class="student-card">
+      <img src="IMG_20240308_134544.jpg" alt="Student">
+      <div class="student-content">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Ut enim ad minim veniam.
+        </p>
+        <h4>Arvind Yadav</h4>
+        <div class="stars">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="student-card">
+      <img src="IMG_20240308_231234.jpg" alt="Student">
+      <div class="student-content">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Ut enim ad minim veniam.
+        </p>
+        <h4>Arman Yadav</h4>
+        <div class="stars">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star-half"></i>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+ <!-- ...............call to action........ -->
+
+
+           <section class="cta">
+		<h1>Enroll For Our Various Onlin Courses <br>
+			Anywher From The World
+		</h1>
+		<a href="form validation2.html"class="button">LOGIN</a>
+	</section>
+
+	<!-- ............Footer............ -->
+
+	<section class="footer">
+
+			<h3>About Us</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore etdolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud<br> exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat.</p>
+				<div class="icon">
+			<i class="fa-brands fa-facebook " style="color:darkblue;"></i>
+			<i class="fa-brands fa-instagram " style="color:darkred;"></i>
+			<i class="fa-brands fa-twitter" style="color:darkslateblue;"></i>
+			<i class="fa-brands fa-youtube " style="color:darkred;"></i>
+			 <h5 style="color: gray;">www.arvind.com</h5>
+		</div>
+
+</section>
+
+
+		<footer>By-Arvind yadav</footer>
+
+
+	</div> 
+<script>
+function toggleMenu(btn){
+document.getElementById("navMenu").classList.toggle("show");
+btn.classList.toggle("active");
+}
+</script>
+</body>
+
+</html>
